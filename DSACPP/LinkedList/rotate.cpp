@@ -1,0 +1,99 @@
+#include<iostream>
+
+using namespace std;
+
+
+class node{
+     
+    public:
+
+    int val;
+    node* next;
+
+    node(int ele){
+        val=ele;
+        next=NULL;
+    }
+};
+
+class list{
+    node* root;
+    node* tail;
+    public:
+    list(){
+        root=NULL;
+        tail=NULL;
+    }
+
+    void addFirst(int ele){
+        if(!root)
+        {
+            root=new node(ele);
+            tail=root;
+            return;
+        }
+
+        node* temp= new node(ele);
+        temp->next=root;
+        root=temp;
+    }
+
+    void addLast(int ele){
+        if(tail==NULL){
+            tail=new node(ele);
+            root=tail;
+            return;
+        }
+        tail->next= new node(ele);
+        tail=tail->next;
+    }
+
+
+    void rotate(int n){
+           
+        int count=0;
+        node* temp=root;
+        while(temp){
+            count++;
+            temp=temp->next;
+        }
+
+        n=n%count;
+        count=count-n;
+        temp=root;
+        cout<<n<<" "<<count<<endl;
+        node* pre=NULL;
+        while(count--){
+             pre=temp;
+              temp=temp->next;
+        }
+        if(pre==NULL){
+            return;
+        }
+        tail->next=root;
+        pre->next=NULL;
+        root=temp;
+    }
+
+    void show(){
+         cout<<"SHow function\n";
+       node* temp=root;
+        while(temp){
+            cout<<temp->val<<"->";
+            temp=temp->next;
+        }
+        cout<<endl;
+    }
+
+
+};
+int main(){
+    list ls;
+    ls.addFirst(9);
+    ls.addLast(90);
+    ls.addFirst(79);
+    ls.addLast(56);
+    ls.show();
+   ls.rotate(4);
+   ls.show();
+}
