@@ -1,20 +1,17 @@
 
 
-name= input("enter your name: ")
-print("your name is",name,"\nWelcoome",name)
+x=56
+print(x,"ok",45,sep="*",end="/////")
+print("hello world",end="\n")
 
-#taking multiple input in python
+name= 'dipok'
+age =21
 
-#in a single line must 
-x,y= input("Enter two number").split()
-print(x,y)
+print("Name is",name,"Age is",age)
 
-#three input in a single line
-x,y,z= input("enter three input ").split()
+print(f"Name is {name  }Age is {age}")
 
-print(x,y,z)
 
-print("type cast x ",int(x))
+age =540;
 
-#print data type in python 
-print(type(y))
+print("Age using %% %d" %age)
