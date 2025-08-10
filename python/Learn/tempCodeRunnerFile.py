@@ -1,3 +1,2 @@
-stractmethod
-    def m1(self):
-        pass
+,2):
+#     list.__add__(i)
