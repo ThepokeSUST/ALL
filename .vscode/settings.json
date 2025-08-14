@@ -1,6 +1,7 @@
 {
     "files.associations": {
-        "algorithm": "cpp"
+        "algorithm": "cpp",
+        "new": "cpp"
     },
     "python.analysis.extraPaths": [
         "./python/Learn/Geeksforgeeks"
