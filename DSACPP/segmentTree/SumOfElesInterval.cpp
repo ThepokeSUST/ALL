@@ -53,7 +53,7 @@ class SegmentSum{
        public:
         SegmentSum(int n){
             size=n;
-            seg=new int[n];
+            seg=new int[n*4];
         }
 
         void Build(int arr[]){
