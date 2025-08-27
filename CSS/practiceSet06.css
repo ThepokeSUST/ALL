@@ -1,0 +1,41 @@
+div{
+    height: 100px;
+    width: 100px;
+}
+
+ul{
+    background-color: cadetblue;
+    height: 20px;
+    display: flex;
+    margin: 0px;
+    flex-direction: row;
+    justify-content:space-between;
+    padding: 0px;
+
+
+}
+
+li{
+    display: inline;
+    list-style-type:  none;
+    background-color: aquamarine;
+    height: 20px;
+}
+
+
+#outer{
+    background-color: black;
+    margin-left: 400px;
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;/*main axis*/
+    align-items: center;/*vertical axis*/
+}
+
+#inner{
+    height: 40px;
+    width: 40px;
+    border-top: 1px;
+    background-color: blue;
+    align-self: flex-end;
+}

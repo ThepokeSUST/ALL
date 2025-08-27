@@ -1,0 +1,20 @@
+div{
+    height: 100px;
+    width: 100px;
+    background-color: aqua;
+    border: 2px solid black;
+    margin-top: 5px;
+    display: inline-block;
+    border-radius: 50%;
+}
+
+#div1{
+    background-image: url(01bg.jpg);
+    background-size: cover;
+}
+
+body{
+     background-image: url(01bg.jpg);
+     background-size: cover;
+     /* background-repeat: no-repeat; */
+}
