@@ -13,9 +13,6 @@ int makesum(vector<int> &coins,int sum,int idx){
       return 1;
     if(sum<0 )
        return 0;
-
-    
-
     return makesum(coins,sum-coins[idx],idx)+makesum(coins,sum,idx+1);
 }
 void ways(vector<int> &coins,int sum){
