@@ -2,7 +2,8 @@
     "files.associations": {
         "algorithm": "cpp",
         "new": "cpp",
-        "iostream": "cpp"
+        "iostream": "cpp",
+        "valarray": "cpp"
     },
     "python.analysis.extraPaths": [
         "./python/Learn/Geeksforgeeks"
