@@ -1,34 +1,65 @@
-#include <bits/stdc++.h>
-
+#include <iostream>
+#include <vector>
+#include <climits>
 using namespace std;
-
-int main()
+int minCoin(vector<int> &coin, int idx, int sum, vector<vector<int>> &DP)
 {
 
+    if (idx == 0)
+    {
+        if (sum % coin[0] == 0)
+            return sum / coin[idx];
+        return INT_MAX;
+    }
+    if (DP[idx][sum] != -1)
+        return DP[idx][sum];
+    int take = INT_MAX;
+    if (sum >= coin[idx])
+    {
+        take = minCoin(coin, idx, sum - coin[idx], DP);
+    }
+    if (take != INT_MAX)
+        take++;
+    int noTake = minCoin(coin, idx - 1, sum, DP);
+
+    return DP[idx][sum] = min(take, noTake);
+}
+int main()
+{
     int n;
     cin >> n;
-    vector<int> coins(n);
-
+    vector<int> coin(n);
     for (int i = 0; i < n; i++)
-        cin >> coins[i];
+        cin >> coin[i];
     int sum;
+    cout << "enter target ";
     cin >> sum;
+    vector<vector<int>> DP(n, vector<int>(sum + 1, 0));
 
-    vector<int> DP(sum + 1);
     for (int i = 0; i <= sum; i++)
     {
-        if (i % coins[0] == 0)
-            DP[i] = i / coins[0];
+        if (i % coin[0] == 0)
+            DP[0][i] = i / coin[0];
         else
-            DP[i] = INT_MAX;
+            DP[0][i] = INT_MAX;
     }
+    for (int i = 1; i < n; i++)
+    {
 
-    for(int i=1;i<coins.size();i++){
-         
-        for(int j=coins[i];j<=sum;j++){
-            if(DP[j-coins[i]]!=INT_MAX)
-            DP[j]=min(DP[j],DP[j-coins[i]]+1);
+        for (int j = 0; j <= sum; j++)
+        {
+            int take = INT_MAX;
+            if (j >= coin[i])
+            {
+                take = DP[i][j - coin[i]];
+            }
+            if (take != INT_MAX)
+                take++;
+            int noTake =DP[ i- 1][j];
+
+             DP[i][j] = min(take, noTake);
         }
+
     }
-    cout<<DP[sum];
+    cout<<DP[n-1][sum];
 }
