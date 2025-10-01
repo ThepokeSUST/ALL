@@ -1,52 +1,39 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
 
 using namespace std;
+// int rcrs(string str, string strr, int i, int j)
+// {
 
+//     if (i < 0 || j < 0)
+//         return 0;
+//     if (str[i] == strr[j])
+//         return 1 + rcrs(str, strr, i - 1, j - 1);
+//     else
+//     {
+//         return max(rcrs(str, strr, i - 1, j), rcrs(str, strr, i, j - 1));
+//     }
+// }
 int main()
 {
-    string str1, str2;
-    cin >> str1 >> str2;
-    vector<vector<int>> DP(str1.size(), vector<int>(str2.size(), -1));
+    string str, strr;
+    cin >> str >> strr;
+   // cout << rcrs(str, strr, str.size() - 1, strr.size() - 1);
 
-    //   cout<<LCS(str1,str2,str1.size()-1,str2.size()-1,DP);
-    for (int i = 0; i < str2.size(); i++)
+    vector<vector<int>> DP(str.size() + 1, vector<int>(strr.size() + 1, 0));
+
+    for (int i = 1; i <= str.size(); i++)
     {
-        if (str1[0] == str2[i])
-            DP[0][i] = 1;
-        else
+        for (int j = 1; j <= strr.size(); j++)
         {
-            if (i != 0)
-                DP[0][i] = DP[0][i - 1];
-            else
-                DP[0][i] = 0;
-        }
-    }
-    for (int i = 1; i < str1.size(); i++)
-    {
-
-        if (str1[i] == str2[0])
-            DP[i][0] = 1;
-        else
-        {
-            DP[i][0] = DP[i - 1][0];
-        }
-    }
-
-    for (int i = 1; i < str1.size(); i++)
-    {
-
-        for (int j = 1; j < str2.size(); j++)
-        {
-            if (str1[i] == str2[j])
-            {
-                DP[i][j] = 1 + DP[i - 1][j - 1];
-            }
+            if (str[i-1] == strr[j-1])
+                DP[i][j]=1+DP[i - 1][j - 1];
             else
             {
-                DP[i][j] = max(DP[i][j - 1], DP[i - 1][j]);
+                DP[i][j]= max(DP[ i - 1][j], DP[i][ j - 1]);
             }
         }
     }
-
-    cout << DP[str1.size() - 1][str2.size() - 1];
+   cout<<endl;
+    cout<<DP[str.size()][strr.size()];
 }
