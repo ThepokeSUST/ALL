@@ -1,3 +1,8 @@
+#include<bits\stdc++.h>
+
+
+using namespace std;
+
 
 class ST{
      int n;
@@ -56,3 +61,25 @@ class ST{
         return max(left,max(right,cross));
        }
 };
+
+int main(){
+
+    int n;
+    cin>>n;
+    vector<int> vec(n);
+
+    for(int i=0;i<n;i++) cin>>vec[i];
+
+    ST st= ST(n);
+    st.build(vec,0,n-1,0);
+
+    for(int i=0;i<5;i++){
+        cout<<"for query ";
+        int a,b;
+        cin>>a>>b;
+        cout<<st.query(0,n-1,a,b,0,vec)<<endl;
+    }
+}
+
+
+//-2,1,-3,4,-1,2,1,-5,4
