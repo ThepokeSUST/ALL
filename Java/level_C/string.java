@@ -94,19 +94,47 @@ public class string {
         // System.out.println(str.replaceFirst("AA", "aa"));
 
 
+
+
+
+
+
         //reversing a string using concate() method 
 
-        String a="abcd";
-        String b="";
+        // String a="abcd";
+        // String b="";
 
-        for(int i=a.length()-1;i>=0;i--){
+        // for(int i=a.length()-1;i>=0;i--){
              
-            String c=Character.toString(a.charAt(i));
-            b=b.concat(c);
+        //     String c=Character.toString(a.charAt(i));
+        //     b=b.concat(c);
 
-        }
-        System.out.println(a+"\n"+b);
+        // }
+        // System.out.println(a+"\n"+b);
 
+
+
+
+
+
+        String str="dipok";
+        String str2=str.substring(1);
+        System.out.println(str +" "+str2);
+        System.out.println(str.indexOf(str2));
+        System.out.println(str2.indexOf(str));
+        str="dipok deb nath";
+        str2=str.trim();
+        System.out.println(str2);
+        str="     dipok deb        nath     ";
+        str2="next";
+        System.out.println();
+        System.out.println(str+str2);
+        str=str.trim();
+        System.out.println(str+str2);
+        str=str.replace('d', 'p');
+        System.out.println(str);
+        str= str.replaceFirst("p", "d");
+        System.out.println(str);
 
     }
 }

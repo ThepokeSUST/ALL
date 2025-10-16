@@ -5,6 +5,6 @@ public class StringPrac {
           CharSequence str= "dipok";
           System.out.println(str.length());
           System.out.println(str.subSequence(0, 1));
-          System.out.println(str.charAt(str.length()));
+          System.out.println(str.charAt(str.length()-1));
       }
 }
