@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+          
+           #div1{
+              
+           }
+    </style>
+</head>
+<body>
+    
+
+      <div id="div1">
+          
+    
+      </div>
+</body>
+    <script>
+          
+        setInterval(()=>{
+                const des=new Date(2028,2,12).getTime();
+        //   console.log(des);
+        const tday= new Date().getTime();
+        console.log(tday);
+
+        console.log(new Date);
+        const div1=document.getElementById("div1");
+        let time=des-tday;
+        if(time<0){
+           div1.textContent="Event Finished";
+        }
+        else{
+              
+             let days=Math.floor((time)/(60000*60*24));
+             time%=(60000*60*24);
+             let hours=Math.floor(time/(60000*60));
+             time%=(60000*60);
+             let mini=Math.floor(time/60000);
+             time%=60000;
+             let sec=Math.floor(time/1000);
+             time%=1000;
+
+             let res= `${days} days ${hours} hours ${mini} minite ${sec} second ${time} milisecond`;
+
+             div1.textContent=res;
+             div1.style.backgroundColor="green";
+             
+        }
+        },1)
+  
+    </script>
+</html>

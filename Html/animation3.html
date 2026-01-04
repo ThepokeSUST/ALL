@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1{
+              background-color: sienna;
+              height: 100px;
+              width: 50px;
+              animation-name: div1animation;
+              animation-duration: 5s;
+
+              position: relative;
+              animation-timing-function: ease;
+              animation-iteration-count: infinite;
+              
+              
+        }
+
+        @keyframes div1animation{
+              
+              /* from{
+                
+                 
+              }
+              to{
+                 left: 400px;
+                 background-color: chartreuse;
+              } */
+
+              0%{
+                 left: 0px;
+                 top:0px;
+
+              }
+              25%{
+                left:50px;
+                top: 0px;
+              }
+              50%{
+                left:50px;
+                top: 50px;
+              }
+              100%{
+                left:0px;
+                top: 0px;
+              }
+
+        }
+    </style>
+</head>
+<body>
+
+    <div id="div1">
+
+    </div>
+    
+</body>
+</html>

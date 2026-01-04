@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     
+    <style>
+          body{
+            background-color: rgb(105, 55, 152);
+          }
+          #container{
+             background-color: rgb(37, 0, 72);
+             height: 90vh;
+             width: 40vw;
+          }
+          #div1{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: 100vw;
+          }
+
+          #astro{
+            margin-top: 50px;
+            background-color: slategray;
+            text-align: center;
+            /* margin-top: 15px; */
+            width: 100px;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 10px;
+            font-weight: 800;
+            margin-bottom: 15px;
+            
+          }
+
+          #form{
+            color: white;
+
+            padding-left: 100px;
+            padding-top:50px ;
+          }
+
+          #button{
+              position: relative;
+              left: 50px;
+              background-color: green;
+          }
+
+    </style>
+</head>
+<body>
+    
+  <div id="div1">
+      <div id="container">
+          <div id="astro">Astrology</div>
+          <div id="content">
+
+            <form id="form">
+               <label for="firstname">First Name:</label>
+               <br>
+               <input id="firstname" type="text" style="width: 300px;" name="firstname">
+               <br>
+               <br>
+                <label for="surname">SurName:</label>
+               <br>
+               <input id="surname" type="text" style="width: 300px;" name="surname">
+
+               <br>
+               <br>
+
+               <label for="day">Date Of Birth(Day)</label>
+               <br>
+               <input id="day" type="number" style="width: 300px;" name="day">
+                 <br>
+               <br>
+
+               <label for="month">Date Of Birth(month)</label>
+               <br>
+               <input id="month" type="number" style="width: 300px;" name="month">
+
+                 <br>
+               <br>
+
+               <label for="year">Date Of Birth(year)</label>
+               <br>
+               <input id="year" type="number" style="width: 300px;" name="year">
+               <br>
+               <br>
+               <button type="submit" style="width: 200px;" id="button">Submit</button>
+
+            </form>
+
+            <div id="result"></div>       
+
+          </div>
+        
+
+    </div>
+  </div>
+    <script>
+         
+        //   let firstname=document.getElementById("firstname");
+        //   let surname=document.getElementById("surname");
+        //   let day=document.getElementById("day")
+
+        let form=document.getElementById("form");
+        console.log(form)
+        form.addEventListener("submit",(e)=>{
+            e.preventDefault();
+             let fn=document.getElementById("firstname");
+             let sn=document.getElementById("surname");
+             let d=document.getElementById("day");
+             let m=document.getElementById("month");
+             let y=document.getElementById('year');
+
+             let firstname=fn.value.trim();
+             let surname=sn.value.trim();
+             let day=parseInt(d.value);
+             let month=parseInt(m.value);
+             let year=parseInt(y.value);
+            //  console.log(firstname,surname,day,month,year);
+
+            let res=document.getElementById("result");
+            
+
+
+        })
+
+
+
+    </script>
+</body>
+</html>

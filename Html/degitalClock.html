@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="div1">
+         <h2>Time:</h2>
+    
+    </div>
+  
+</body>
+<script>
+      const bdy=document.getElementsByTagName("body");
+      bdy[0].style.backgroundColor="black";
+
+      const div1=document.getElementById("div1");
+      div1.style.display="flex";
+      div1.style.justifyContent="center";
+      div1.style.alignItems="center";
+
+      const time=new Date();
+      div1.textContent+=time;
+      div1.style.color="white";
+      const div2=document.createElement("div");
+      div2.id="div2";
+      div1.after(div2);
+      div2.textContent="hi";
+      div2.style.color="white";
+
+      setInterval(()=>{
+         const t=new Date();
+         div2.textContent=t.toLocaleTimeString();
+        // div2.textContent+="o";
+
+      },1000);
+      
+     
+      
+</script>
+</html>

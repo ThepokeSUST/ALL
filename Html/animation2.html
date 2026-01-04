@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+           #div1{
+              
+               position: relative;
+             
+              height: 100px;
+              width: 100px;
+              background-color: red;
+              animation-name: divcircle;
+              animation-duration: 3s;
+              animation-direction: alternate-reverse;
+              /* top: 400px; */
+              animation-iteration-count: infinite;
+
+              animation-fill-mode:backwards;
+           }
+
+           @keyframes divcircle{
+               0%{
+                 background-color: wheat;
+                 top:0px;
+                 left: 0px;
+                  width: 150px;
+                  opacity: 0;
+
+               }
+               25%{
+                background-color: yellowgreen;
+                top: 0px;
+                left: 200px;
+                width: 200px;
+                opacity: 0.25;
+               }
+               50%{
+                background-color: tomato;
+                top: 200px;
+                left: 200px;
+                width: 250px;
+                opacity: .50;
+               }
+               75%{
+                width: 300px;
+                left: 0px;
+                top: 200px;
+                background-color: violet;
+                opacity: 0.75;
+               }
+               100%{
+                width: 350px;
+                background-color: springgreen;
+                left: 0px;
+                top: 0px;
+                opacity: 1;
+               }
+           }
+
+           #div2{
+            background-color: yellow;
+            height: 150px;
+            width: 150px;
+            position:relative;
+            top: 400px;
+           }
+    </style>
+</head>
+<body>
+    
+
+       <div id="div1">
+           
+       </div>
+       <div id="div2">
+
+       </div>
+</body>
+</html>
