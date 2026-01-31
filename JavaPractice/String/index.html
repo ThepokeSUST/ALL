@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Active Navbar Example</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        nav {
+            background-color: #333;
+            padding: 8px 16px;
+        }
+        nav a {
+            color: #ccc;
+            text-decoration: none;
+            padding: 8px 12px;
+            margin-right: 8px;
+            font-size: 16px;
+        }
+        nav a.active {
+            color: #fff;
+            background-color: #007bff;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="courses.html">Courses</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <section>
+        <h1>Home Page</h1>
+        <p>This is the home page content.</p>
+    </section>
+
+    <script>
+        // Adds "active" class to the nav link that matches the current URL
+        const links = document.querySelectorAll("nav a");
+        const current = window.location.pathname.split("/").pop();
+
+        links.forEach(link => {
+            const href = link.getAttribute("href");
+            if (href === current || (href === "index.html" && current === "")) {
+                link.classList.add("active");
+            }
+        });
+    </script>
+
+</body>
+</html>
